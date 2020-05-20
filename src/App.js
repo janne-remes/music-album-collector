@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import MusicAlbum from './components/MusicAlbum';
+import Header from './components/Header.js';
+import MainWindow from './components/MainWindow';
 
-import './App.css';
+//import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 class App extends Component {
@@ -9,7 +10,8 @@ class App extends Component {
     return (
       <div className="container">
         <div className="App">
-          <MusicAlbum/>
+          <Header/>
+          <MainWindow/>
         </div>
       </div>
     );

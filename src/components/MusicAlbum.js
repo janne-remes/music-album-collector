@@ -4,7 +4,7 @@ class MusicAlbum extends Component {
     render() {
         return (
             <div>
-                <h1>Music Album</h1>
+                <h2>Music Album</h2>
             </div>
         );
     }
