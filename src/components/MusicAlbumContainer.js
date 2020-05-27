@@ -4,33 +4,38 @@ import MusicAlbumContainerImage from './MusicAlbumContainerImage'
 
 export class MusicAlbumContainer extends Component {
     
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
     
         this.state = {
              showFull: false
         }
-
-        this.buttonClicked = this.buttonClicked.bind(this)
     }
 
-    buttonClicked = () => {
+    headerClicked = () => {
         var { showFull } = this.state;
         this.setState({ showFull : !showFull })
     }
     
     
     render() {
+        var album = this.props.album
+        
         return (
             
             <div>
-                <div className = "MusicAlbumContainerHeader">
-                    Albumi
+                <div className = "MusicAlbumContainerHeader" onClick={() => this.headerClicked()}>
+                    {album.albumName}
                 </div>
-                <div hidden onClick={this.buttonClicked}>
-                    <MusicAlbumContainerData album = {this.props.album} />
-                    <MusicAlbumContainerImage album = {this.props.album} />
-                </div>
+                
+                {
+                    this.state.showFull?
+                    <div>
+                        <MusicAlbumContainerData album = {this.props.album} />
+                        <MusicAlbumContainerImage album = {this.props.album} />
+                    </div>
+                    :null
+                }
             </div>
         )
     }
